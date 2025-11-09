@@ -292,22 +292,79 @@
         <section class="section">
             <h2>2 | CONTROLS</h2>
             <h3>2.1 | Using a Bacta Tank</h3>
-            <p>Walking up to a Bacta Tank will display a prompt...</p>
+            <p>Walking up to a Bacta Tank will display a hold E to enter prompt. Upon holding E, you will enter the
+                Bacta Tank,
+                disabling your equipment, and removing any injuries/status effects. To exit, you must press E and wait a
+                few seconds
+                while an animation plays. It is recommended to use a Bacta Tank if available to conserve your supplies.
+                You can place
+                others into Bacta Tanks as long as you are carrying them. Location of where to find Bacta Tanks is
+                unknown.
+            </p>
             <h3>2.2 | Carrying</h3>
-            <p>Pressing V when a downed player is nearby attaches the downed player's model...</p>
+            <p>Pressing V when a downed (unconscious) player is nearby attaches the downed player’s character model to
+                the back of the
+                carrier. Facing your camera forward while carrying someone accesses your medical menu, facing backwards
+                accesses their
+                menu. This mechanic allows you to render aid while transporting a downed player. Similarly, a third
+                person can access a
+                downed player's menu while they are being carried as long as they’re nearby. However, the delay caused
+                by moving while
+                carrying someone causes you to exit the downed player’s menu. A downed player can be placed in an open
+                LAAT if they are
+                being carried. If the downed player is in a critical state, they must be taken to a Bacta Tank, where
+                they can be placed
+                inside. To drop someone you are carrying, press V.</p>
             <h3>2.3 | Opening the Medical Menu</h3>
-            <p>Pressing U opens the CW:P medical menu...</p>
-            <div class="image-slot">[INSERT MEDICAL MENU IMAGE HERE]</div>
+            <p>Pressing U opens the CW:P medical menu, the appearance and functionality is a simplified version of the
+                ACS “Mopmed”
+                system. Pressing U within 4 studs of another character opens the medical menu for said player. Because
+                of this, if more
+                than 1 player is nearby, it may become difficult to access their menu. Therefore, ask them to separate
+                themselves out
+                from other players if you need to administer aid. If there are multiple people downed next to each
+                other, carry one away
+                and administer aid while another person aids the other downed player. If you are downed, you are not
+                able to open the
+                medical menu.
+            </p>
         </section>
 
         <section class="section">
             <h2>3 | UI</h2>
             <h3>3.1 | Overview Window</h3>
-            <p>Opening the medical menu reveals three windows...</p>
+            <p>Opening the medical menu reveals 3 windows to help administer aid to either yourself or another player.
+                The first
+                window, titled “Overview”, contains: the username of the patient, the blood level, health, and status
+                effects (upon
+                receiving damage). When hurt, your health bar will decrease depending on the lethality of the weapon.
+                For a standard
+                trooper, most weapons will not down them in one shot. Depending on the situation, you may receive a
+                status effect. If
+                you receive bleeding as a status effect, your blood level will begin to decrease. Blood regenerates once
+                your health has
+                reached at least 50%. Below is an image of the medical menu.</p>
             <h3>3.2 | Equipment Window</h3>
-            <p>The middle window titled “Equipment” lists supplies...</p>
+            <p>The middle window, titled “Equipment”, simply lists the amount of medical supplies that remain in the
+                player’s
+                inventory. This list is purely visual, it has no functionality aside from representing your remaining
+                supplies. The
+                starting quantity for all personnel is zero. You can obtain supplies through the “ . Below is an image
+                of the medical
+                menu.
+            </p>
             <h3>3.3 | Examine and Treat Window</h3>
-            <p>The rightmost window is where items are used by clicking icons...</p>
+            <p>The rightmost window, titled “Examine and Treat” is where medical items are used by left-clicking the
+                corresponding
+                icon. When an item is used, the progress bar at the bottom indicates when the process is done. An item
+                is consumed when
+                the icon is clicked, not when the process is completed. Because of this mechanic, if you exit the range
+                of another
+                player’s medical menu after clicking an icon. The item will be gone until you re-enter the range of the
+                other player,
+                after which it will be applied to the player. Below is an image of the medical menu outlining the name
+                of each icon.
+            </p>
             <div class="image-slot"><img src="info.png" alt="" class="kep"></div>
         </section>
 
@@ -315,7 +372,12 @@
         <section class="section">
             <h2>4 | EQUIPMENT</h2>
             <h3>4.1 | Standard Supplies</h3>
-            <p>All personnel start with the following quantities...</p>
+            <p>All personnel are given the same quantity of supplies. Field medics are an exemption, because of medical
+                items
+                eventually having a weight property; they will have a larger quantity of supplies at the cost of a lower
+                armament. Below
+                is a list of the 7 items along with the starting amount of each:
+            </p>
             <ul>
                 <li>BANDAGES: 10</li>
                 <li>STIMPACKS: 5</li>
@@ -332,17 +394,59 @@
         <!-- TREATMENT -->
         <section class="section">
             <h2>5 | ADMINISTERING TREATMENT</h2>
-            <p>Each medical item has a unique purpose...</p>
-            <div class="image-slot">[INSERT ITEM ICONS IMAGE HERE]</div>
+            <h3>5.1 | Bandage</h3>
+            <p>Stops light and medium bleeds. Light bleeds require 1 bandage, medium bleeds require 2 bandages.</p>
+            <h3>5.2 | Stimpack</h3>
+            <p>Returns consciousness; requires blood level to be greater than 10%.</p>
+            <h3>5.3 | Autotourniquets</h3>
+            <p>Stops high bleeds.</p>
+            <h3>5.4 | Synthnull Tablets</h3>
+            <p>Decreases pain by one level, however, taking 6 tablets causes the player to go unconscious. After taking
+                5 tablets, it
+                is recommended to wait 5 minutes before taking another tablet. Respawning does not reset the counter,
+                you must wait
+                before the counter is reset.</p>
+            <h3>5.5 | Bacta Bag</h3>
+            <p>Restores half of your blood.</p>
+            <h3>5.6 | Splint</h3>
+            <p>Removes fractured status effect</p>
+            <h3>5.7 | Bacta Spray</h3>
+            <p>Restores ~10% of your health.</p>
         </section>
 
         <!-- FIRST AID -->
         <section class="section">
             <h2>6 | FIRST AID & CHARACTER MECHANICS</h2>
             <h3>6.1 | Reviving a Downed Player</h3>
-            <p>To tell when a player is downed, their character will either ragdoll...</p>
+            <p>To tell when a player is downed, their character model will either ragdoll, or their lower half will sink
+                into the
+                ground. Upon opening their menu, they will have the following status: Medium Bleed, Unconscious, Light
+                Pain, any
+                pre-existing status effects, 0 health, and a decreasing blood level. Before aid can be administered to a
+                downed player,
+                it is vital to ensure the safety of your surroundings. Bleeding is the primary concern, the person
+                administering aid
+                should stop the bleeding before anything else. Once it is stopped, if the area is becoming more
+                hazardous, the player
+                should carry the downed player to a safer area. Otherwise, administer a stimpack. If the downed player
+                is low on blood
+                (less than 10%), provide a Bacta Bag before using a stimpack. Once the player has revived, instruct them
+                to heal the
+                rest of their status effects. If the bleeding is not stopped in time and the player enters a critical
+                state, they must
+                be taken to a Bacta Tank as soon as possible. It is important to note if a Bacta Tank is available, it
+                should be used
+                after stopping the bleeding.
+            </p>
             <h3>6.2 | Fall Damage Mechanics</h3>
-            <p>Ladders do not stop fall damage. Catching yourself only delays it...</p>
+            <p>Ladders do not stop fall damage, catching yourself on a ladder will temporarily prevent the damage.
+                However, climbing
+                down and touching the ground will cause all the damage to be received. Climbing up will prevent the
+                damage from being
+                taken. Rolling does not prevent fall damage. Fall damage is calculated based on your velocity and travel
+                distance,
+                jumping prematurely in a moving vehicle will cause heavy damage.
+            </p>
         </section>
 
     </main>
