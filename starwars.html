@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CW:P Medical System Manual</title>
+
+    <style>
+        /* ===== CORE STAR WARS STYLE ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Orbitron", sans-serif;
+            background-color: #04070b;
+            background-image: radial-gradient(circle at 20% 20%, rgba(0, 150, 255, 0.1), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 0, 0.05), transparent 40%);
+            color: #d8e9ff;
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        img {
+            width: 140px;
+            margin: 20px 0;
+            filter: drop-shadow(0 0 12px rgba(0, 186, 255, 0.5));
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            color: #00baff;
+            text-shadow: 0 0 10px #00baff, 0 0 25px rgba(0, 186, 255, 0.6);
+            margin-bottom: 10px;
+        }
+
+        .note {
+            color: #ff4040;
+            font-weight: 600;
+            text-shadow: 0 0 6px #ff4040;
+        }
+
+        /* ===== HOLO PANEL ===== */
+        .manual-container {
+            background: rgba(10, 20, 35, 0.9);
+            border: 1px solid rgba(0, 186, 255, 0.3);
+            border-radius: 14px;
+            box-shadow: 0 0 20px rgba(0, 186, 255, 0.3);
+            max-width: 1100px;
+            margin: 0 auto 60px;
+            padding: 40px 50px;
+            overflow: hidden;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            margin-bottom: 40px;
+            border-left: 3px solid rgba(0, 186, 255, 0.6);
+            padding-left: 15px;
+        }
+
+        .toc h2 {
+            color: #00baff;
+            text-shadow: 0 0 10px #00baff;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .toc pre {
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.95rem;
+            color: #d8e9ff;
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            color: #00baff;
+            text-shadow: 0 0 10px #00baff;
+            border-bottom: 1px solid rgba(0, 186, 255, 0.4);
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+        }
+
+        .section h3 {
+            font-size: 1.1rem;
+            color: #ff4040;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 6px #ff4040;
+        }
+
+        .section p {
+            text-align: justify;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            margin: 8px 0 16px 25px;
+        }
+
+        ul li {
+            margin-bottom: 6px;
+        }
+
+        .image-slot {
+            display: block;
+            background: rgba(0, 186, 255, 0.1);
+            border: 1px dashed rgba(0, 186, 255, 0.4);
+            border-radius: 10px;
+            text-align: center;
+            padding: 30px;
+            color: #00baff;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* ===== MUSIC TOGGLE ===== */
+        .music-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 30, 60, 0.9);
+            border: 1px solid rgba(0, 186, 255, 0.5);
+            color: #00baff;
+            font-family: "Orbitron", sans-serif;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 186, 255, 0.5);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            z-index: 9999;
+        }
+
+        .music-toggle.off {
+            color: #ff4040;
+            border-color: #ff4040;
+            box-shadow: 0 0 10px rgba(255, 64, 64, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            color: #888;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: #00baff;
+            text-shadow: 0 0 8px #00baff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CW:P MEDICAL SYSTEM MANUAL</h1>
+        <p class="note">Updated: August 26th, 2025</p>
+        <img src="icon.png" alt="">
+    </header>
+
+    <button class="music-toggle" id="musicButton">MUSIC: ON</button>
+
+    <main class="manual-container">
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <pre>
+1 | INTRODUCTION	Pg. 1-3
+1.1 | Summary	
+1.2 | Status Effects	
+2 | CONTROLS	Pg. 4-5
+2.1 | Using a Bacta Tank	
+2.2 | Carrying	
+2.3 | Opening the Medical Menu	
+3 | UI	Pg. 6-8
+3.1 | Overview Window	
+3.2 | Equipment Window	
+3.3 | Examine and Treat Window	
+4 | EQUIPMENT	Pg. 9
+4.1 | Standard Supplies	
+4.2 | Field Medic Supplies [W.I.P.]	
+5 | ADMINISTERING TREATMENT	Pg. 10
+5.1 | Bandage	
+5.2 | Stimpack	
+5.3 | Autotourniquets	
+5.4 | Synthnull Tablets	
+5.5 | Bacta Bag	
+5.6 | Splint	
+5.7 | Bacta Spray	
+6 | FIRST AID & CHARACTER MECHANICS	Pg. 11-12
+6.1 | Reviving a Downed Player	
+6.2 | Fall Damage Mechanics
+      </pre>
+        </div>
+
+        <section class="section">
+            <h2>1 | INTRODUCTION</h2>
+            <h3>1.1 | Summary</h3>
+            <p>The CW:P Medical System consists of six status effects: bleeding, pain, fractured, unconscious,
+                overdosed, and critical state...</p>
+            <h3>1.2 | Status Effects</h3>
+            <p>As of September 19, 2025, there are four main ways to receive these status effects. The most common cause
+                is when a player is shot. The second cause is through fall damage, the third cause is when
+                occupying an exploding vehicle, and the fourth is by a lightsaber.
+
+            <ol>
+                <li>Critical State - 30% chance to occur once your blood reaches 0
+                    No medical aid can be rendered
+                    Can be fixed by having a second person place you into a bacta tank</li>
+
+
+                <br>
+                <li>Bleeds - Chance to occur when getting shot or caught in a vehicle explosion. Guaranteed to occur
+                    when
+                    downed.
+                    <br>
+                    Light Bleed
+                    • 40s before you bleed out & die/enter critical state.
+                    Medium Bleed
+                    • 25s before you bleed out & die/enter critical state
+                    High Bleed
+                    • [Unknown]
+                </li>
+                <br>
+                <li>Pain - Chance to occur when getting shot or caught in a vehicle explosion. Guaranteed to occur when
+                    downed or taking
+                    fall damage. Pain slowly disappears on its own once bleeding status has been cleared.
+
+                    Light Pain
+                    • 12-20 seconds before it disappears
+                    Medium Pain
+                    • 14-16 seconds before it disappears
+                    High Pain
+                    • Caused by severe fall damage
+                    • Often associated with unconsciousness
+                    • ~26 seconds before it disappears</li>
+                <br>
+
+
+                <li>Fractured - Guaranteed to occur when taking fall damage greater than ~65 studs. Chance to occur when
+                    hit
+                    with a
+                    lightsaber
+
+                    • Disables Sprinting and Rolling; increasing walkspeed by ~314%</li>
+                <br>
+                <li>Consciousness - Defines whether you’re active or downed.
+                    Conscious
+                    • Starting status for every trooper
+                    • Allows you to use equipment and medical supplies.
+                    Unconscious
+                    • Occurs when your health has reached 0
+                    • Does not allow you to use equipment or medical supplies
+                    • Receiving damage while downed results in death, bypassing the critical state and blood system</li>
+                <br>
+                <li>Overdosed - Occurs when a player intakes more than 5 Synthnull Tablets
+                    • Can be fixed with a secondary person providing a stimpack</li>
+            </ol>
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>2 | CONTROLS</h2>
+            <h3>2.1 | Using a Bacta Tank</h3>
+            <p>Walking up to a Bacta Tank will display a prompt...</p>
+            <h3>2.2 | Carrying</h3>
+            <p>Pressing V when a downed player is nearby attaches the downed player's model...</p>
+            <h3>2.3 | Opening the Medical Menu</h3>
+            <p>Pressing U opens the CW:P medical menu...</p>
+            <div class="image-slot">[INSERT MEDICAL MENU IMAGE HERE]</div>
+        </section>
+
+        <section class="section">
+            <h2>3 | UI</h2>
+            <h3>3.1 | Overview Window</h3>
+            <p>Opening the medical menu reveals three windows...</p>
+            <h3>3.2 | Equipment Window</h3>
+            <p>The middle window titled “Equipment” lists supplies...</p>
+            <h3>3.3 | Examine and Treat Window</h3>
+            <p>The rightmost window is where items are used by clicking icons...</p>
+            <div class="image-slot"><img src="info.png" alt=""></div>
+        </section>
+
+
+        <section class="section">
+            <h2>4 | EQUIPMENT</h2>
+            <h3>4.1 | Standard Supplies</h3>
+            <p>All personnel start with the following quantities...</p>
+            <ul>
+                <li>BANDAGES: 10</li>
+                <li>STIMPACKS: 5</li>
+                <li>AUTOTOURNIQUETS: 3</li>
+                <li>SYNTHNULL TABLETS: 8</li>
+                <li>BACTA BAGS: 2</li>
+                <li>SPLINTS: 3</li>
+                <li>BACTA SPRAY: 4</li>
+            </ul>
+            <h3>4.2 | Field Medic Supplies [W.I.P.]</h3>
+            <p>Not available until weight properties are released.</p>
+        </section>
+
+        <!-- TREATMENT -->
+        <section class="section">
+            <h2>5 | ADMINISTERING TREATMENT</h2>
+            <p>Each medical item has a unique purpose...</p>
+            <div class="image-slot">[INSERT ITEM ICONS IMAGE HERE]</div>
+        </section>
+
+        <!-- FIRST AID -->
+        <section class="section">
+            <h2>6 | FIRST AID & CHARACTER MECHANICS</h2>
+            <h3>6.1 | Reviving a Downed Player</h3>
+            <p>To tell when a player is downed, their character will either ragdoll...</p>
+            <h3>6.2 | Fall Damage Mechanics</h3>
+            <p>Ladders do not stop fall damage. Catching yourself only delays it...</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© <span>CW:P</span> MEDICAL MANUAL — Clone Warfare Division</p>
+    </footer>
+
+    <!-- ===== BACKGROUND MUSIC ===== -->
+    <audio id="bg-music" autoplay loop>
+        <source src="republic_commando_theme.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const music = document.getElementById('bg-music');
+        const btn = document.getElementById('musicButton');
+
+        btn.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                btn.textContent = "MUSIC: ON";
+                btn.classList.remove("off");
+            } else {
+                music.pause();
+                btn.textContent = "MUSIC: OFF";
+                btn.classList.add("off");
+            }
+        });
+    </script>
+</body>
+
+</html>
